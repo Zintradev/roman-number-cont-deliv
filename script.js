@@ -139,8 +139,14 @@ function handleConversion() {
 }
 
 // Attach an event listener to the convert button to trigger the conversion when clicked.
-document.getElementById('convertButton').addEventListener('click', handleConversion);
+// document.getElementById('convertButton').addEventListener('click', handleConversion);
 
+// Solo ejecutar esto si estamos en un navegador (existe document)
+if (typeof document !== 'undefined') {
+  document.getElementById('convertButton').addEventListener('click', handleConversion);
+}
+
+// Exportar para Node.js (necesario para los tests en GitHub)
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { integerToRoman, romanToInteger };
 }

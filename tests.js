@@ -1,7 +1,10 @@
 // tests.js
 
 // Use Chai's expect for assertions
+const chai = require('chai');
 const expect = chai.expect;
+
+const { integerToRoman, romanToInteger } = require('./script.js');
 
 describe("Roman Numeral Converter", function () {
   describe("Handmade Set: Integer to Roman (TC-1 to TC-13)", function () {
